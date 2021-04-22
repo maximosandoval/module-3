@@ -18,6 +18,10 @@ body {
 }
 
 .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
@@ -27,7 +31,7 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  color: hsl(206, 87%, 47%);
 }
 
 .card {
@@ -51,6 +55,8 @@ header {
 }
 
 .card-body {
+  display: grid;
+  grid-template-columns: auto auto;
   min-height: 100px;
 }
 
