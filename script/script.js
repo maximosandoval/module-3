@@ -42,17 +42,62 @@ function generateItems() {
     return;
   } else if (pLength >= 8 && pLength <= 128) {
     //Insert all other confirms here
-    var lowercaseNum = confirm("Include lower case letters");
-    var UpperChar = confirm("Include lower case letters");
-    var specialChar = confirm("Include lower case letters");
-    var numberChar = confirm("Include lower case letters");
+    var lowercaseNum = confirm("Include lower case letters.");
+    var UpperChar = confirm("Include upper case letters.");
+    var specialChar = confirm("Include special case letters.");
+    var numberChar = confirm("Include numbers.");
   }
   //Write logic in here
   //Check for true or false of all var's
+  var arrayFunction = function () {
+    if (lowercaseNum) {
+      finalArray = finalArray.concat(lowercaseNum);
+    }
+    if (UpperChar) {
+      finalArray = finalArray.concat(UpperChar);
+    }
+    if (specialChar) {
+      finalArray = finalArray.concat(specialChar);
+    }
+    if (numberChar) {
+      finalArray = finalArray.concat(numberChar);
+    }
+    console.log(finalArray);
+    return finalArray;
+  };
 
+  function randomChar(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
   //If they come back true then they have to be placed into a useable string
+  function generatePassword() {
+    var length = prompt("select between 8-128");
+    if (length < 8 || length > 128) {
+      alert("Select Between 8-128");
+      return;
+    }
+    lowerCaseSelected = confirm("You want upper case?");
+    upperCaseSelected = confirm("You want upper case?");
+    specialCaseSelected = confirm("You want upper case?");
+    numberCaseSelected = confirm("You want upper case?");
+    if (
+      !lowerCaseSelected &&
+      !upperCaseSelected &&
+      !specialCaseSelected &&
+      !numberCaseSelected
+    ) {
+      //Alert prompt
+      alert("You need to choose one.");
+      return;
+    }
+  }
+  //JS array concat to join arrays
+  arrayFunction();
+  for (i = 0; i <= length; i++) {
+    password = password.concat(randomChar(finalArray));
+  }
+  return password;
 }
-
 //Function create password
 function createPassword(pWord) {
   var anyNumber = Math.floor(Math.random() * pWord.length);
@@ -61,7 +106,11 @@ function createPassword(pWord) {
 }
 // Function generate password
 function generatePassword() {
-  var userItems = generateItems(); //This is a function I need to write
+  var userItems = generateItems();
+
+  //Event Listner for button click
+  generateBtn.addEventListener("click", writePassword);
+
   console.log(userItems);
   var randompassword = [];
   var items = [];
