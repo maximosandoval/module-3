@@ -9,6 +9,7 @@ var lowerChar = "abcdefghijklmnopqrstuvwxyz";
 var specialChar = "!#$%^&*()+=<>_^&*~";
 
 var numberChar = "0123456789";
+
 //Empty variable to pass the value
 var passChar = "";
 
@@ -107,8 +108,9 @@ function writePassword() {
     return anysymbol;
   }
   // Function generate password
-  // function generatePassword() {
-  // var userItems = generateItems();
+  function generatePassword() {
+    var userItems = generateItems();
+  }
 
   //Event Listner for button click
   generateBtn.addEventListener("click", writePassword);
@@ -117,5 +119,3 @@ function writePassword() {
   var randompassword = [];
   var items = [];
 }
-//Look at operation order - what gets activated first, second etc.
-// All functions are loading into the doc until they get called on
