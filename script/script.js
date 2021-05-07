@@ -117,10 +117,12 @@ function generatePassword() {
     password = password.concat(randomChar(possibleCharacters));
   }
   console.log(password);
-  return password;
+  return generatePassword;
 }
 
-//Create a loop that attaches to generate password and pulls characters from the generate characters array.
+//Create a loop that attaches to generate password and pulls characters from the generate characters array. Create a function for password length. Need to break it out.
+
+//TO DO: We need to have new password loop/coomect with generate password
 
 //Event Listner for button click
 //generateBtn.addEventListener("click", writePassword);
