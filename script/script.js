@@ -12,7 +12,6 @@ var specialChar = "!#$%^&*()+=<>_^&*~";
 var numberChar = "0123456789";
 
 //Empty variable to pass the value
-var passChar = "";
 
 // The arrow below writes the password to the password form field on the HTML
 const writePassword = () => {
@@ -31,6 +30,7 @@ generateBtn.addEventListener("click", writePassword);
 //Function to run the following: password length, generate password, empty string, user cancels out all choices, etc.
 function generatePassword() {
   var newPassword = "";
+  var passChar = "";
   var passwordLength = prompt(
     "How long would you like your password. Choose from 8 - 128 characters?"
   );
@@ -38,28 +38,28 @@ function generatePassword() {
     alert("Your password must be between 8 and 128 characters");
     return generatePassword();
   } else if (passwordLength >= 8 && passwordLength <= 128) {
-    var lowerChar = confirm("Include lowercase letters?");
-    var upperChar = confirm("Include uppercase letters?");
-    var specialChar = confirm("Include special characters?");
-    var numberChar = confirm("Include numbers?");
+    var lowerCheck = confirm("Include lowercase letters?");
+    var upperCheck = confirm("Include uppercase letters?");
+    var specialCheck = confirm("Include special characters?");
+    var numberCheck = confirm("Include numbers?");
   }
-  if (!lowerChar && !upperChar && !specialChar && !numberChar) {
+  if (!lowerCheck && !upperCheck && !specialCheck && !numberCheck) {
     alert("You must select some characters!");
     return generatePassword();
   }
 
-  // adding character selection to passwordCharacters variable
-  if (lowerChar) {
-    passChar = passChar + lowerCase;
+  // adding character selection to passwordCheckacters variable
+  if (lowerCheck) {
+    passChar = passChar + lowerChar;
   }
-  if (upperChar) {
-    passChar = passChar + upperCase;
+  if (upperCheck) {
+    passChar = passChar + upperChar;
   }
-  if (specialChar) {
-    passChar = passChar + specialCharacters;
+  if (specialCheck) {
+    passChar = passChar + specialChar;
   }
-  if (numberChar) {
-    passChar = passChar + numbers;
+  if (numberCheck) {
+    passChar = passChar + numberChar;
   }
   console.log(passChar);
   var newPassword = "";
