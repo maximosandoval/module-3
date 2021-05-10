@@ -62,7 +62,7 @@ function generatePassword() {
     passChar = passChar + numbers;
   }
   console.log(passChar);
-
+  var newPassword = "";
   // Math floor loop to generate password with end user choices
   for (var i = 0; i < passwordLength; i++) {
     newPassword += passChar.charAt(Math.floor(Math.random() * passChar.length));
